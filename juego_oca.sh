@@ -14,10 +14,11 @@ echo "--------------------"
 
 read -p "Número de jugadores (1-4) -> " num_jugadores
 
-if [ $num_jugadores -lt 1 ] || [ $num_jugadores -gt 4 ]; then
-    echo "Número inválido"
-    exit 1
-fi
+while [ $num_jugadores != "1" -a $num_jugadores != "2" -a $num_jugadores != "3" -a $num_jugadores != "4" ]; do
+        echo "Número inválido"
+        read -p "Vuelve a internarlo -> " num_jugadores
+        echo " "
+done
 
 # ---------- FUNCIÓN MOVER (con rebote) ----------
 mover() {
